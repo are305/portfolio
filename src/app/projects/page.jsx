@@ -1,97 +1,99 @@
-'use client';
-import { useState } from 'react';
+"use client";
+import { useState } from "react";
 
 const projectsData = [
   {
     id: 1,
-    name: "Company",
-    description: "Creating technology to empower civilians to explore space on their own terms.",
-    url: "https://company.com",
+    name: "Electronic Invoicing",
+    description: "Developed invoicing software for parking ticketing to include capabilities for electronic invoicing.",
+    url: "",
     category: "Technology",
-    icon: "H"
+    icon: "EI",
   },
   {
     id: 2,
-    name: "Project Alpha",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi.",
-    url: "https://project-alpha.com",
+    name: "Shepherd's Guide",
+    description: "Backend built with Django with SQLite. Frontend built with React.",
+    url: "https://shepherdsguide-frontend-beta.onrender.com/",
     category: "Web Development",
-    icon: "A"
+    icon: "SG",
   },
   {
     id: 3,
-    name: "Innovation Hub",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi.",
-    url: "https://innovation-hub.com",
+    name: "Google Dev Club",
+    description: "Participating in club activities for the official Ensign College Google Dev Club.",
+    url: "",
     category: "Technology",
-    icon: "I"
+    icon: "G",
   },
   {
     id: 4,
-    name: "Creative Studio",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi.",
-    url: "https://creative-studio.com",
+    name: "CS220 Portfolio Template",
+    description: "Portfolio template that showcases my academic and professional achievements.",
+    url: "https://github.com/are305/portfolio",
     category: "Design",
-    icon: "C"
+    icon: "PT",
   },
   {
     id: 5,
-    name: "Data Analytics",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi.",
-    url: "https://data-analytics.com",
+    name: "Dashboards",
+    description: "Twice per term, I generate statistical data for assigned programs as a Canvas Support agent.",
+    url: "",
     category: "Technology",
-    icon: "D"
+    icon: "D",
   },
   {
     id: 6,
-    name: "Mobile App",
-    description: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi.",
-    url: "https://mobile-app.com",
+    name: "MTC Auto Plates",
+    description: "Simple mobile app that uses an auto plate to search for any traffic citations or tickets in Peru.",
+    url: "",
     category: "Mobile Development",
-    icon: "M"
-  }
+    icon: "MTC",
+  },
 ];
 
 const categories = ["All", "Technology", "Web Development", "Design", "Mobile Development"];
 
 export default function Projects() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [isAddingProject, setIsAddingProject] = useState(false);
   const [newProject, setNewProject] = useState({
-    name: '',
-    description: '',
-    url: '',
-    category: 'Technology',
-    icon: ''
+    name: "",
+    description: "",
+    url: "",
+    category: "Technology",
+    icon: "",
   });
 
   const handleAddProject = () => {
     if (newProject.name && newProject.description && newProject.url && newProject.icon) {
       // ここでプロジェクトを追加する処理を実装
-      console.log('Adding new project:', newProject);
+      console.log("Adding new project:", newProject);
       setNewProject({
-        name: '',
-        description: '',
-        url: '',
-        category: 'Technology',
-        icon: ''
+        name: "",
+        description: "",
+        url: "",
+        category: "Technology",
+        icon: "",
       });
       setIsAddingProject(false);
     }
   };
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? projectsData 
-    : projectsData.filter(project => project.category === selectedCategory);
+  const filteredProjects =
+    selectedCategory === "All" ? projectsData : projectsData.filter((project) => project.category === selectedCategory);
 
   return (
     <div className="flex flex-col p-8 max-w-4xl mx-auto">
       <h1 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">
-        Things I've made trying to put my dent in the universe.
+        Showcase of Projects and Accomplishments.
       </h1>
       <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 pl-4">
-        Lorem ipsum dolor sit amet consectetur adipiscing elit. Ut et massa mi. Lorem ipsum dolor sit amet consectetur
-        adipiscing elit. Ut et massa mi Lorem ipsum dolor sit amet consectetur.
+        I am a software engineer with a strong background in web application development, specializing in both front-end
+        and back-end technologies such as React.js and Django. With experience as a Tech Lead, I have a proven track
+        record of developing innovative solutions, training teammates, and communicating with clients to deliver
+        high-quality projects. My work includes building a web application to track at-risk students and creating
+        certified electronic invoicing software
       </p>
 
       {/* カテゴリーフィルターボタン */}
@@ -102,23 +104,13 @@ export default function Projects() {
             onClick={() => setSelectedCategory(category)}
             className={`px-4 py-2 rounded-lg transition-colors ${
               selectedCategory === category
-                ? 'bg-blue-600 text-white'
-                : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
+                ? "bg-blue-600 text-white"
+                : "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600"
             }`}
           >
             {category}
           </button>
         ))}
-      </div>
-
-      {/* プロジェクト追加ボタン */}
-      <div className="mb-8">
-        <button
-          onClick={() => setIsAddingProject(!isAddingProject)}
-          className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-        >
-          {isAddingProject ? 'Cancel' : 'Add New Project'}
-        </button>
       </div>
 
       {/* プロジェクト追加フォーム */}
@@ -127,9 +119,7 @@ export default function Projects() {
           <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Add New Project</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Project Name
-              </label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Project Name</label>
               <input
                 type="text"
                 value={newProject.name}
@@ -139,19 +129,19 @@ export default function Projects() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Category
-              </label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Category</label>
               <select
                 value={newProject.category}
                 onChange={(e) => setNewProject({ ...newProject, category: e.target.value })}
                 className="w-full p-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               >
-                {categories.filter(cat => cat !== 'All').map((category) => (
-                  <option key={category} value={category}>
-                    {category}
-                  </option>
-                ))}
+                {categories
+                  .filter((cat) => cat !== "All")
+                  .map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
               </select>
             </div>
             <div>
@@ -168,9 +158,7 @@ export default function Projects() {
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                URL
-              </label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">URL</label>
               <input
                 type="url"
                 value={newProject.url}
@@ -180,9 +168,7 @@ export default function Projects() {
               />
             </div>
             <div className="md:col-span-2">
-              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Description
-              </label>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Description</label>
               <textarea
                 value={newProject.description}
                 onChange={(e) => setNewProject({ ...newProject, description: e.target.value })}
@@ -202,11 +188,11 @@ export default function Projects() {
                 onClick={() => {
                   setIsAddingProject(false);
                   setNewProject({
-                    name: '',
-                    description: '',
-                    url: '',
-                    category: 'Technology',
-                    icon: ''
+                    name: "",
+                    description: "",
+                    url: "",
+                    category: "Technology",
+                    icon: "",
                   });
                 }}
                 className="px-4 py-2 bg-gray-500 text-white rounded-md hover:bg-gray-600 transition-colors"
@@ -229,17 +215,21 @@ export default function Projects() {
             <div className="w-12 h-12 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mb-4">
               <span className="text-red-600 dark:text-red-400 font-bold text-lg">{project.icon}</span>
             </div>
-            
+
             {/* プロジェクト名 */}
             <h3 className="font-bold text-lg mb-2 text-gray-900 dark:text-white">{project.name}</h3>
-            
+
             {/* プロジェクト説明 */}
             <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
-            
+
             {/* プロジェクトURL */}
             <div className="flex items-center">
               <svg className="w-4 h-4 text-gray-400 dark:text-gray-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                  clipRule="evenodd"
+                />
               </svg>
               <a
                 href={project.url}
@@ -253,8 +243,12 @@ export default function Projects() {
 
             {/* プロジェクト操作ボタン */}
             <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              <button className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 mr-2 text-sm">Edit</button>
-              <button className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 text-sm">Delete</button>
+              <button className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 mr-2 text-sm">
+                Edit
+              </button>
+              <button className="text-red-600 hover:text-red-800 dark:text-red-400 dark:hover:text-red-300 text-sm">
+                Delete
+              </button>
             </div>
           </div>
         ))}

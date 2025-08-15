@@ -1,6 +1,7 @@
 export default function Timeline() {
   const events = [
-    { year: "2024", description: "Started software engineering degree." },
+    { year: "2022", description: "Started software engineering degree." },
+    { year: "2023", description: "Started working as a student employee in Canvas Support." },
     { year: "2025", description: "Worked on CS220 portfolio project." },
   ];
 

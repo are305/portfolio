@@ -23,10 +23,18 @@ export default function AboutPage() {
           />
         </div>
         <div className="space-y-4">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Your Name</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">Anthony Escobedo</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            Short introduction or mission statement goes here. You can write about your background, passions, and what
-            you do.
+            I'm Anthony Richard Escobedo Conislla, a dedicated software engineering student at Ensign College (B.S.,
+            expected 2025, GPA 3.8) with a strong foundation in computer science from San Ignacio de Loyola Institute in
+            Lima, Peru (GPA 3.9). With over a decade of experience, I specialize in creating impactful solutions, from
+            my current role as LMS Support at Ensign College, where I troubleshoot Canvas issues and enhance processes
+            using APIs, to my previous position as Tech Lead at Intellisoft, where I developed custom software, managed
+            databases, and led client projects. My technical skills include React.js, JavaScript, RESTful APIs, GraphQL,
+            Jest, Docker, and Git, complemented by certifications in JavaScript Essentials and RESTful API Design.
+            Notable projects include Shepherd's Guide, a Django and React web app for tracking at-risk students, and an
+            electronic invoicing system certified by Peru’s SUNAT. Passionate about teamwork, honesty, and innovation,
+            I’m excited to build user-focused solutions and collaborate on meaningful tech ventures.
           </p>
         </div>
       </section>
