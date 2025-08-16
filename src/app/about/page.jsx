@@ -2,6 +2,7 @@ import Image from "next/image";
 import ProfileCard from "@/components/ProfileCard";
 import SkillsSection from "@/components/SkillsSection";
 import Timeline from "@/components/Timeline";
+import pic from "../../../public/profile.jpg";
 
 export const metadata = {
   title: "Portfolio - About",
@@ -15,7 +16,7 @@ export default function AboutPage() {
       <section className="flex flex-col md:flex-row items-center gap-8">
         <div className="flex-shrink-0">
           <Image
-            src="/profile.jpg"
+            src={pic}
             alt="Profile photo"
             width={200}
             height={200}
