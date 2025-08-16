@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useRouter } from "next/router";
 import ProfileCard from "@/components/ProfileCard";
 import SkillsSection from "@/components/SkillsSection";
 import Timeline from "@/components/Timeline";
@@ -16,7 +15,7 @@ export default function AboutPage() {
       <section className="flex flex-col md:flex-row items-center gap-8">
         <div className="flex-shrink-0">
           <Image
-            src={`${basePath}/profile.jpg`}
+            src="/profile.jpg"
             alt="Profile photo"
             width={200}
             height={200}
